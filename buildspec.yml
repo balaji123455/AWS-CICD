@@ -3,9 +3,9 @@ version: 0.2
 
 env:
   parameter-store:
-    DOCKER_REGISTRY_USERNAME: /myapp/docker-credentials/username
-    DOCKER_REGISTRY_PASSWORD: /myapp/docker-credentials/password
-    DOCKER_REGISTRY_URL: /myapp/docker-registry/url
+    DOCKER_REGISTRY_USERNAME: my-app
+    DOCKER_REGISTRY_PASSWORD: my-app2
+    DOCKER_REGISTRY_URL: myapp-3
 phases:
   install:
     runtime-versions:
@@ -13,7 +13,7 @@ phases:
   pre_build:
     commands:
       - echo "Installing dependencies..."
-      - curl -o requirements.txt https://raw.githubusercontent.com/Nithish1641/simple-python-app/main/requirements.txt
+      - curl -o requirements.txt https://raw.githubusercontent.com/balaji495/AWS-CICD/main/requirements.txt
       - pip install -r requirements.txt
   build:
     commands:
